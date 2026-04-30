@@ -8,9 +8,7 @@
 
 Website demo sau khi deploy lên Vercel:
 
-```txt
 [link demo web](https://react.dev/learn/react-compiler/installation).
-```
 
 ---
 
