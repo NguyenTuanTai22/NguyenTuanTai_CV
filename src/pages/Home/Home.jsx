@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router";
-import avatarImage from "../../assets/image/anh-1.png";
-import Header from "../components/Header/Header";
+import { useNavigate } from "react-router-dom";
+import avatarImg from "../../assets/image/anh-2.png";
 import "./Home.css";
 
 function makeId() {
@@ -77,22 +76,53 @@ function Home() {
 
         setTimeout(() => {
             setActivePlanet(null);
-
-            if (path) {
-                navigate(path);
-            }
-        }, 300);
+            navigate(path);
+        }, 280);
     }
 
     return (
         <div className="home-page">
-            <Header showHint={true} />
-
             <div className="home-bg">
                 <div className="home-light light-1"></div>
                 <div className="home-light light-2"></div>
                 <div className="home-light light-3"></div>
             </div>
+
+            <section className="home-intro">
+                <div className="intro-kicker">CV cá nhân</div>
+
+                <h1>
+                    Nguyễn Tuấn Tài
+                    <span>Frontend Developer</span>
+                </h1>
+
+                <p className="intro-desc">
+                    Mình yêu thích lập trình web, thiết kế giao diện và tạo ra những
+                    trải nghiệm hiện đại, rõ ràng, dễ sử dụng cho người dùng.
+                </p>
+
+                <div className="home-stats">
+                    <div>
+                        <strong>React</strong>
+                        <span>Đang học</span>
+                    </div>
+
+                    <div>
+                        <strong>UI</strong>
+                        <span>Yêu thích</span>
+                    </div>
+
+                    <div>
+                        <strong>CV</strong>
+                        <span>Cá nhân</span>
+                    </div>
+                </div>
+
+                <div className="home-tip">
+                    <span>💡</span>
+                    <p>Nhấn vào ảnh để mở các hành tinh điều hướng.</p>
+                </div>
+            </section>
 
             <main className={`image-container ${showPlanets ? "show-planets" : ""}`}>
                 <div className="magic-ring ring-1"></div>
@@ -100,7 +130,7 @@ function Home() {
                 <div className="magic-ring ring-3"></div>
 
                 <img
-                    src={avatarImage}
+                    src={avatarImg}
                     alt="Ảnh chính"
                     className="center-image"
                     onClick={handleImageClick}

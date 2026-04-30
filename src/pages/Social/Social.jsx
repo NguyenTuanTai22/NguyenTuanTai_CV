@@ -1,191 +1,105 @@
-import { useNavigate } from "react-router";
-import avatarImage from "../../assets/image/anh-2.png";
+import avatarImg from "../../assets/image/anh-1.png"
 import "./Social.css";
 
-const Social = () => {
-    const navigate = useNavigate();
+function Social() {
+    const socials = [
+        {
+            icon: "📘",
+            name: "Facebook",
+            desc: "Trang cá nhân Facebook",
+            value: "facebook.com/your-profile",
+            url: "https://facebook.com/your-profile",
+        },
+        {
+            icon: "💻",
+            name: "GitHub",
+            desc: "Nơi lưu trữ các dự án lập trình",
+            value: "github.com/your-username",
+            url: "https://github.com/your-username",
+        },
+        {
+            icon: "🎵",
+            name: "TikTok",
+            desc: "Nội dung giải trí và cá nhân",
+            value: "tiktok.com/@your-name",
+            url: "https://tiktok.com/@your-name",
+        },
+        {
+            icon: "📷",
+            name: "Instagram",
+            desc: "Hình ảnh và khoảnh khắc cá nhân",
+            value: "instagram.com/your-name",
+            url: "https://instagram.com/your-name",
+        },
+    ];
 
     return (
-        <div className="social-page">
-            <div className="social-bg">
-                <div className="social-orb social-orb-1"></div>
-                <div className="social-orb social-orb-2"></div>
-                <div className="social-orb social-orb-3"></div>
-            </div>
+        <main className="social-page">
+            <section className="social-wrapper">
+                <div className="social-layout">
+                    <aside className="social-intro">
+                        <div className="avatar-box">
+                            <div className="avatar-glow"></div>
+                            <img src={avatarImg} alt="Nguyễn Tuấn Tài" className="avatar-img" />
+                        </div>
 
-            <button
-                type="button"
-                className="social-back-btn"
-                onClick={() => navigate("/")}
-            >
-                <span>←</span>
-                Quay lại Home
-            </button>
+                        <div className="page-kicker">Mạng xã hội</div>
 
-            <main className="social-container">
-                <section className="social-layout">
-                    <div className="social-avatar-box">
-                        <div className="social-avatar-glow"></div>
-                        <div className="social-avatar-ring social-ring-1"></div>
-                        <div className="social-avatar-ring social-ring-2"></div>
+                        <h1>Kết nối tôi.</h1>
 
-                        <img
-                            src={avatarImage}
-                            alt="Nguyễn Tuấn Tài"
-                            className="social-avatar"
-                        />
-                    </div>
+                        <p>
+                            Đây là những nền tảng mạng xã hội cá nhân của mình.
+                            Bạn có thể thay các đường dẫn bên dưới bằng link thật
+                            để người xem dễ dàng liên hệ, theo dõi hoặc xem các dự án của mình.
+                        </p>
 
-                    <div className="social-right">
-                        <div className="social-hero-content">
-                            <p className="social-label">SOCIAL NETWORK</p>
-
-                            <h1>
-                                Mạng xã hội
-                                <span>Kết nối với tôi</span>
-                            </h1>
-
-                            <p className="social-desc">
-                                Đây là khu vực chứa các liên kết mạng xã hội, tài khoản học tập,
-                                nền tảng chia sẻ dự án và thông tin liên hệ cá nhân.
+                        <div className="social-note">
+                            <span>✨</span>
+                            <p>
+                                Mình thường dùng mạng xã hội để chia sẻ, học hỏi và lưu lại
+                                những điều thú vị trong quá trình phát triển bản thân.
                             </p>
+                        </div>
+                    </aside>
 
-                            <div className="social-mini-stats">
-                                <div>
-                                    <strong>06</strong>
-                                    <span>Nền tảng</span>
-                                </div>
+                    <section className="social-panel">
+                        <div className="social-panel-head">
+                            <div>
+                                <span>Social Links</span>
+                                <h2>Thông tin kết nối</h2>
+                            </div>
 
-                                <div>
-                                    <strong>CV</strong>
-                                    <span>Cá nhân</span>
-                                </div>
-
-                                <div>
-                                    <strong>React</strong>
-                                    <span>Website</span>
-                                </div>
+                            <div className="social-count">
+                                {socials.length}
                             </div>
                         </div>
 
-                        <section className="social-grid">
-                            <a
-                                href="https://www.facebook.com/kun.22tuoi"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-card facebook"
-                            >
-                                <div className="social-icon">f</div>
+                        <div className="social-list">
+                            {socials.map((item) => (
+                                <a
+                                    className="social-card"
+                                    href={item.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    key={item.name}
+                                >
+                                    <div className="social-icon">{item.icon}</div>
 
-                                <div className="social-info">
-                                    <h3>Facebook</h3>
-                                    <p>Trang cá nhân và kết nối bạn bè.</p>
-                                    <span>facebook.com/kun.22tuoi</span>
-                                </div>
+                                    <div className="social-content">
+                                        <h3>{item.name}</h3>
+                                        <p>{item.desc}</p>
+                                        <strong>{item.value}</strong>
+                                    </div>
 
-                                <div className="social-arrow">↗</div>
-                            </a>
-
-                            <a
-                                href="https://github.com/NguyenTuanTai22"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-card github"
-                            >
-                                <div className="social-icon">⌘</div>
-
-                                <div className="social-info">
-                                    <h3>GitHub</h3>
-                                    <p>Lưu trữ source code và các dự án cá nhân.</p>
-                                    <span>github.com/NguyenTuanTai22</span>
-                                </div>
-
-                                <div className="social-arrow">↗</div>
-                            </a>
-
-                            <a
-                                href="https://www.tiktok.com/@ten-tiktok-cua-ban"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-card tiktok"
-                            >
-                                <div className="social-icon">♪</div>
-
-                                <div className="social-info">
-                                    <h3>TikTok</h3>
-                                    <p>Chia sẻ video ngắn, nội dung cá nhân hoặc học tập.</p>
-                                    <span>Thay bằng link TikTok</span>
-                                </div>
-
-                                <div className="social-arrow">↗</div>
-                            </a>
-
-                            <a
-                                href="https://www.youtube.com/@Tainho19"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-card youtube"
-                            >
-                                <div className="social-icon">▶</div>
-
-                                <div className="social-info">
-                                    <h3>YouTube</h3>
-                                    <p>Kênh video, học tập hoặc giới thiệu sản phẩm.</p>
-                                    <span>youtube.com/@Tainho19</span>
-                                </div>
-
-                                <div className="social-arrow">↗</div>
-                            </a>
-
-                            <a
-                                href="mailto:emailcuaban@gmail.com"
-                                className="social-card gmail"
-                            >
-                                <div className="social-icon">@</div>
-
-                                <div className="social-info">
-                                    <h3>Gmail</h3>
-                                    <p>Email liên hệ cá nhân hoặc công việc.</p>
-                                    <span>Thay bằng Gmail của bạn</span>
-                                </div>
-
-                                <div className="social-arrow">↗</div>
-                            </a>
-
-                            <a
-                                href="https://zalo.me/0900000000"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-card zalo"
-                            >
-                                <div className="social-icon">Z</div>
-
-                                <div className="social-info">
-                                    <h3>Zalo</h3>
-                                    <p>Liên hệ nhanh qua số điện thoại hoặc Zalo cá nhân.</p>
-                                    <span>Thay bằng link Zalo</span>
-                                </div>
-
-                                <div className="social-arrow">↗</div>
-                            </a>
-                        </section>
-
-                        <section className="social-note">
-                            <div className="note-icon">✦</div>
-
-                            <div>
-                                <h3>Ghi chú</h3>
-                                <p>
-                                    Các nút mạng xã hội dùng thẻ <strong>a</strong>. Khi thay link,
-                                    nhớ ghi đầy đủ dạng <strong>https://...</strong> để mở đúng trang.
-                                </p>
-                            </div>
-                        </section>
-                    </div>
-                </section>
-            </main>
-        </div>
+                                    <div className="social-arrow">↗</div>
+                                </a>
+                            ))}
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
     );
-};
+}
 
 export default Social;

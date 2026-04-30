@@ -1,0 +1,328 @@
+.contact-page {
+    min-height: 100vh;
+    padding: 96px 18px 36px;
+    display: flex;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 12% 12%, rgba(124, 92, 255, 0.16), transparent 32%),
+        radial-gradient(circle at 88% 18%, rgba(0, 217, 255, 0.14), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(255, 196, 87, 0.1), transparent 30%);
+}
+
+.contact-wrapper {
+    width: 100%;
+    max-width: 1120px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 800;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.42);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 12px 30px var(--shadow);
+    transition: 0.25s ease;
+}
+
+.back-link:hover {
+    transform: translateY(-2px);
+    background: var(--primary-soft);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.contact-intro,
+.contact-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 34px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 24px 70px var(--shadow);
+}
+
+.contact-intro {
+    padding: 34px;
+}
+
+.contact-intro::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: -120px;
+    right: -120px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    opacity: 0.9;
+}
+
+.contact-badge {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: var(--primary);
+    background: var(--primary-soft);
+    border: 1px solid var(--border);
+}
+
+.contact-intro h1 {
+    position: relative;
+    z-index: 2;
+    margin: 22px 0 16px;
+    font-size: clamp(2.1rem, 4vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: -1.4px;
+}
+
+.contact-intro > p {
+    position: relative;
+    z-index: 2;
+    line-height: 1.75;
+    opacity: 0.82;
+}
+
+.contact-highlight {
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 26px;
+    display: flex;
+    gap: 15px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.34);
+}
+
+.contact-highlight span {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    background: var(--primary-soft);
+    font-size: 25px;
+}
+
+.contact-highlight h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.contact-highlight p {
+    margin: 0;
+    line-height: 1.65;
+    opacity: 0.8;
+}
+
+.contact-panel {
+    padding: 32px;
+}
+
+.contact-panel::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: -130px;
+    bottom: -130px;
+    border-radius: 50%;
+    background: rgba(0, 217, 255, 0.14);
+    pointer-events: none;
+}
+
+.contact-panel-head {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 24px;
+}
+
+.contact-panel-head span {
+    display: inline-flex;
+    margin-bottom: 10px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 900;
+    color: var(--primary);
+    background: var(--primary-soft);
+    border: 1px solid var(--border);
+}
+
+.contact-panel-head h2 {
+    margin: 0;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    letter-spacing: -0.9px;
+}
+
+.contact-list {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 15px;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 26px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateX(6px);
+    background: rgba(255, 255, 255, 0.5);
+    border-color: var(--border-strong);
+    box-shadow: 0 18px 40px var(--shadow);
+}
+
+.contact-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    background: var(--primary-soft);
+    font-size: 28px;
+}
+
+.contact-content small {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.contact-content h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    word-break: break-word;
+}
+
+.contact-content p {
+    margin: 0;
+    line-height: 1.55;
+    opacity: 0.75;
+}
+
+.contact-message-box {
+    position: relative;
+    z-index: 2;
+    margin-top: 22px;
+    padding: 22px;
+    border-radius: 26px;
+    border: 1px solid var(--border);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.18));
+}
+
+.contact-message-box h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+.contact-message-box p {
+    margin: 0;
+    line-height: 1.65;
+    opacity: 0.78;
+}
+
+/* Dark mode */
+body[data-theme="dark"] .back-link,
+body[data-theme="dark"] .contact-intro,
+body[data-theme="dark"] .contact-panel,
+body[data-theme="dark"] .contact-highlight,
+body[data-theme="dark"] .contact-card,
+body[data-theme="dark"] .contact-message-box,
+body.dark .back-link,
+body.dark .contact-intro,
+body.dark .contact-panel,
+body.dark .contact-highlight,
+body.dark .contact-card,
+body.dark .contact-message-box {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+body[data-theme="dark"] .contact-card:hover,
+body.dark .contact-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tablet */
+@media (max-width: 920px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+    .contact-page {
+        padding: 82px 14px 28px;
+    }
+
+    .back-link {
+        width: 100%;
+    }
+
+    .contact-intro,
+    .contact-panel {
+        padding: 22px;
+        border-radius: 28px;
+    }
+
+    .contact-intro {
+        text-align: center;
+    }
+
+    .contact-highlight {
+        text-align: left;
+    }
+
+    .contact-card {
+        grid-template-columns: 54px 1fr;
+        gap: 14px;
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .contact-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 18px;
+        font-size: 24px;
+    }
+
+    .contact-content h3 {
+        font-size: 1rem;
+    }
+}
