@@ -733,41 +733,6 @@ body.dark .glow-particles span {
     }
 }
 
-/* Ripple khi bấm ảnh hoặc menu */
-.ripple {
-    position: fixed;
-    left: var(--x);
-    top: var(--y);
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 999;
-    background:
-        radial-gradient(circle, rgba(255, 255, 210, 0.42) 0%, rgba(89, 202, 255, 0.22) 34%, transparent 72%);
-    animation: rippleAnim 0.72s ease-out forwards;
-}
-
-body.dark .ripple {
-    background:
-        radial-gradient(circle, rgba(138, 126, 255, 0.38) 0%, rgba(0, 213, 255, 0.28) 36%, transparent 74%);
-}
-
-@keyframes rippleAnim {
-    0% {
-        width: 0;
-        height: 0;
-        opacity: 0.9;
-    }
-
-    100% {
-        width: 360px;
-        height: 360px;
-        opacity: 0;
-    }
-}
-
 /* Responsive */
 @media (max-width: 992px) {
     .home-intro {

@@ -4,32 +4,32 @@ import "./Social.css";
 function Social() {
     const socials = [
         {
-            icon: "📘",
+            icon: "f",
             name: "Facebook",
             desc: "Trang cá nhân Facebook",
-            value: "facebook.com/your-profile",
-            url: "https://facebook.com/your-profile",
+            value: "facebook.com/kun.22tuoi",
+            url: "https://www.facebook.com/kun.22tuoi/",
         },
         {
-            icon: "💻",
+            icon: "⌘",
             name: "GitHub",
             desc: "Nơi lưu trữ các dự án lập trình",
-            value: "github.com/your-username",
-            url: "https://github.com/your-username",
+            value: "github.com/NguyenTuanTai22",
+            url: "https://github.com/NguyenTuanTai22",
         },
         {
-            icon: "🎵",
+            icon: "♪",
             name: "TikTok",
             desc: "Nội dung giải trí và cá nhân",
-            value: "tiktok.com/@your-name",
-            url: "https://tiktok.com/@your-name",
+            value: "tiktok.com/@dung.tim.den.toi",
+            url: "https://www.tiktok.com/@dung.tim.den.toi",
         },
         {
-            icon: "📷",
-            name: "Instagram",
-            desc: "Hình ảnh và khoảnh khắc cá nhân",
-            value: "instagram.com/your-name",
-            url: "https://instagram.com/your-name",
+            icon: "Z",
+            name: "Zalo",
+            desc: "Liên hệ qua Zalo",
+            value: "zalo.me/0868807904",
+            url: "https://zalo.me/0868807904",
         },
     ];
 

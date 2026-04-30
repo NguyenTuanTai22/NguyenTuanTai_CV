@@ -3,15 +3,10 @@ import { useNavigate } from "react-router-dom";
 import avatarImg from "../../assets/image/anh-2.png";
 import "./Home.css";
 
-function makeId() {
-    return `${Date.now()}-${Math.random()}`;
-}
-
 function Home() {
     const navigate = useNavigate();
 
     const [showPlanets, setShowPlanets] = useState(false);
-    const [ripples, setRipples] = useState([]);
     const [activePlanet, setActivePlanet] = useState(null);
 
     const particles = useMemo(() => {
@@ -25,7 +20,7 @@ function Home() {
         }));
     }, []);
 
-   useEffect(() => {
+    useEffect(() => {
         function closeOrbit() {
             setShowPlanets(false);
             setActivePlanet(null);
@@ -47,36 +42,16 @@ function Home() {
         };
     }, []);
 
-    function createRipple(x, y) {
-        const id = makeId();
-
-        setRipples((prev) => [
-            ...prev,
-            {
-                id,
-                x,
-                y
-            }
-        ]);
-
-        setTimeout(() => {
-            setRipples((prev) => prev.filter((item) => item.id !== id));
-        }, 700);
-    }
-
     function handleImageClick(e) {
         e.stopPropagation();
         setShowPlanets((prev) => !prev);
         setActivePlanet(null);
-        createRipple(e.clientX, e.clientY);
     }
 
     function handlePlanetClick(e, id, path) {
         e.stopPropagation();
 
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-        createRipple(e.clientX, e.clientY);
 
         if (isMobile && activePlanet !== id) {
             setActivePlanet(id);
@@ -224,17 +199,6 @@ function Home() {
                     ></span>
                 ))}
             </div>
-
-            {ripples.map((ripple) => (
-                <span
-                    key={ripple.id}
-                    className="ripple"
-                    style={{
-                        "--x": `${ripple.x}px`,
-                        "--y": `${ripple.y}px`
-                    }}
-                ></span>
-            ))}
         </div>
     );
 }

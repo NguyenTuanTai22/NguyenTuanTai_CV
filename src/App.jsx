@@ -10,6 +10,7 @@ import Projects from "./Projects/Projects";
 import Contact from "./pages/Contact/Contact";
 import Social from "./pages/Social/Social";
 import Settings from "./Settings/Settings";
+import ClickRipple from "./components/ClickRipple";
 
 function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Header showHint={isHomePage} />
+      <ClickRipple />
 
       <Routes>
         <Route path="/" element={<Home/>} />
