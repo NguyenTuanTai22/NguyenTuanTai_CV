@@ -9,7 +9,7 @@
 Website demo sau khi deploy lên Vercel:
 
 ```txt
-[https://link-demo-cua-ban.vercel.app/](https://nguyen-tuan-tai-cv.vercel.app/)
+[link demo web](https://react.dev/learn/react-compiler/installation).
 ```
 
 ---
