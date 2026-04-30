@@ -8,7 +8,7 @@
 
 Website demo sau khi deploy lên Vercel:
 
-[link demo web](https://react.dev/learn/react-compiler/installation).
+[link demo web](https://nguyen-tuan-tai-cv.vercel.app/).
 
 ---
 
