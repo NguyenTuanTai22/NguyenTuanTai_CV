@@ -1001,3 +1001,47 @@ body.dark .ripple {
         transform: translateY(-7px) scale(1.04);
     }
 }
+
+/* Mobile: nhấn lần 1 để xổ chữ, nhấn lần 2 mới vào trang */
+@media (max-width: 768px) {
+    .planet.is-active {
+        width: min(148px, 46vw);
+        border-color: var(--border-strong);
+        box-shadow:
+            0 0 28px var(--glow-strong),
+            0 18px 38px var(--shadow),
+            inset 0 0 16px rgba(255, 255, 255, 0.2);
+    }
+
+    .planet.is-active .planet-text {
+        opacity: 1;
+        max-width: 92px;
+        transform: scale(1);
+        animation: none;
+    }
+
+    .planet-left.is-active {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .planet-right.is-active {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    }
+
+    .planet.is-active .planet-icon {
+        transform: scale(1.06);
+    }
+}
+
+@media (max-width: 390px) {
+    .planet.is-active {
+        width: min(136px, 48vw);
+    }
+
+    .planet.is-active .planet-text {
+        max-width: 82px;
+        font-size: 12px;
+    }
+}

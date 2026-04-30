@@ -25,14 +25,16 @@ function Home() {
         }));
     }, []);
 
-    useEffect(() => {
+   useEffect(() => {
         function closeOrbit() {
             setShowPlanets(false);
+            setActivePlanet(null);
         }
 
         function closeByEsc(e) {
             if (e.key === "Escape") {
                 setShowPlanets(false);
+                setActivePlanet(null);
             }
         }
 
@@ -65,19 +67,28 @@ function Home() {
     function handleImageClick(e) {
         e.stopPropagation();
         setShowPlanets((prev) => !prev);
+        setActivePlanet(null);
         createRipple(e.clientX, e.clientY);
     }
 
     function handlePlanetClick(e, id, path) {
         e.stopPropagation();
 
-        setActivePlanet(id);
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
         createRipple(e.clientX, e.clientY);
+
+        if (isMobile && activePlanet !== id) {
+            setActivePlanet(id);
+            return;
+        }
+
+        setActivePlanet(id);
 
         setTimeout(() => {
             setActivePlanet(null);
             navigate(path);
-        }, 280);
+        }, isMobile ? 180 : 280);
     }
 
     return (
