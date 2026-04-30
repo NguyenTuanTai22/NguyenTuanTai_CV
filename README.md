@@ -1,16 +1,35 @@
-# React + Vite
+# CV Cá Nhân - React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Đây là website CV cá nhân được xây dựng bằng **React + Vite**.  
+Website dùng để giới thiệu thông tin cá nhân, kỹ năng, dự án, thông tin liên hệ và mạng xã hội.
 
-Currently, two official plugins are available:
+## Công nghệ sử dụng
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- Vite
+- React Router DOM
+- CSS thuần
+- LocalStorage để lưu chế độ sáng/tối
 
-## React Compiler
+## Chức năng chính
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Trang chủ có ảnh cá nhân và hiệu ứng orbit menu.
+- Nhấn vào ảnh để hiển thị các mục điều hướng.
+- Trên điện thoại, nhấn icon lần 1 để xem tên mục, nhấn lần 2 để vào trang.
+- Có chế độ sáng/tối và lưu lại lựa chọn của người dùng.
+- Các trang con gồm:
+  - Thông tin cá nhân
+  - Kỹ năng
+  - Dự án
+  - Liên hệ
+  - Mạng xã hội
 
-## Expanding the ESLint configuration
+## Cấu trúc giao diện
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Website được thiết kế theo phong cách hiện đại, có hiệu ứng ánh sáng, nền động, card trong suốt và bố cục responsive phù hợp cho cả máy tính và điện thoại.
+
+## Cài đặt và chạy dự án
+
+```bash
+npm install
+npm run dev
