@@ -39,7 +39,7 @@ function Contact() {
 
                                 <div className="contact-content">
                                     <small>Email</small>
-                                    <h3>your-email@gmail.com</h3>
+                                    <h3>NguyenTuantTai224@gmail.com</h3>
                                     <p>Dùng để trao đổi thông tin hoặc liên hệ cá nhân.</p>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@ function Contact() {
 
                                 <div className="contact-content">
                                     <small>Số điện thoại</small>
-                                    <h3>0123 456 789</h3>
+                                    <h3>0868 807 904</h3>
                                     <p>Có thể liên hệ khi cần trao đổi nhanh.</p>
                                 </div>
                             </div>
