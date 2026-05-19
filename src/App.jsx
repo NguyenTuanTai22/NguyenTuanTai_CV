@@ -12,6 +12,8 @@ import Social from "./pages/Social/Social";
 import Settings from "./Settings/Settings";
 import ClickRipple from "./components/ClickRipple";
 
+import Admin from "./admin/Admin";
+
 function App() {
   const location = useLocation();
 
@@ -30,6 +32,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/social" element={<Social />} />
         <Route path="/settings" element={<Settings />} />
+
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </>
   )
