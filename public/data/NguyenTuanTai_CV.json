@@ -1,0 +1,63 @@
+{
+    "projects": [
+        {
+            "icon": "🧾",
+            "title": "CV cá nhân",
+            "desc": "CV dạng website với hiệu ứng orbit, dark mode và trang thông tin cá nhân."
+        }
+    ],
+    "socials": [
+        {
+            "icon": "⌘",
+            "name": "GitHub",
+            "desc": "Nơi lưu trữ các dự án lập trình",
+            "value": "github.com/NguyenTuanTai22",
+            "url": "https://github.com/NguyenTuanTai22"
+        },
+        {
+            "icon": "Z",
+            "name": "Zalo",
+            "desc": "Liên hệ qua Zalo",
+            "value": "zalo.me/",
+            "url": "https://zalo.me/0868807904"
+        }
+    ],
+    "skills": [
+        {
+            "icon": "🌐",
+            "name": "HTML / CSS",
+            "level": "Tốt",
+            "percent": "86%"
+        },
+        {
+            "icon": "⚛️",
+            "name": "ReactJS",
+            "level": "Đang phát triển",
+            "percent": "72%"
+        },
+        {
+            "icon": "🎨",
+            "name": "UI / Responsive",
+            "level": "Tốt",
+            "percent": "80%"
+        },
+        {
+            "icon": "🧠",
+            "name": "JavaScript",
+            "level": "Khá",
+            "percent": "70%"
+        },
+        {
+            "icon": "🗄️",
+            "name": "ASP.NET",
+            "level": "Đang học",
+            "percent": "62%"
+        },
+        {
+            "icon": "🛠️",
+            "name": "Git / Deploy",
+            "level": "Cơ bản",
+            "percent": "58%"
+        }
+    ]
+}

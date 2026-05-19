@@ -90,7 +90,7 @@ function Home() {
                 <div className="home-stats">
                     <div>
                         <strong>React</strong>
-                        <span>Đang học</span>
+                        <span>Khá</span>
                     </div>
 
                     <div>

@@ -1,23 +1,19 @@
+import { usePortfolioData } from "../hooks/usePortfolioData";
 import "./Projects.css";
 
 function Projects() {
-    const projects = [
-        {
-            icon: "📘",
-            title: "Website học từ vựng",
-            desc: "Giao diện luyện từ vựng tiếng Anh, thống kê tiến độ và lịch sử học."
-        },
-        {
-            icon: "🎬",
-            title: "Website Movie",
-            desc: "Trang xem phim có bố cục người dùng và khu vực quản trị riêng."
-        },
-        {
-            icon: "🧾",
-            title: "CV cá nhân",
-            desc: "CV dạng website với hiệu ứng orbit, dark mode và trang thông tin cá nhân."
-        }
-    ];
+    const { data, loading } = usePortfolioData();
+    const projects = data.projects || [];
+
+    if (loading) {
+        return (
+            <main className="page-shell projects-page">
+                <section className="page-card">
+                    <p className="page-desc">Đang tải dữ liệu dự án...</p>
+                </section>
+            </main>
+        );
+    }
 
     return (
         <main className="page-shell projects-page">
@@ -30,15 +26,19 @@ function Projects() {
                 </p>
 
                 <div className="projects-list">
-                    {projects.map((item) => (
-                        <article className="project-card" key={item.title}>
-                            <span>{item.icon}</span>
-                            <div>
-                                <h3>{item.title}</h3>
-                                <p>{item.desc}</p>
-                            </div>
-                        </article>
-                    ))}
+                    {projects.length > 0 ? (
+                        projects.map((item, index) => (
+                            <article className="project-card" key={`${item.title}-${index}`}>
+                                <span>{item.icon}</span>
+                                <div>
+                                    <h3>{item.title}</h3>
+                                    <p>{item.desc}</p>
+                                </div>
+                            </article>
+                        ))
+                    ) : (
+                        <p className="page-desc">Chưa có dự án nào trong JSON.</p>
+                    )}
                 </div>
             </section>
         </main>

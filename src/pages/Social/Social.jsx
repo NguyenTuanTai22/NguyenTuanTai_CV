@@ -1,37 +1,20 @@
-import avatarImg from "../../assets/image/anh-1.png"
+import avatarImg from "../../assets/image/anh-1.png";
+import { usePortfolioData } from "../../hooks/usePortfolioData";
 import "./Social.css";
 
 function Social() {
-    const socials = [
-        {
-            icon: "f",
-            name: "Facebook",
-            desc: "Trang cá nhân Facebook",
-            value: "facebook.com/kun.22tuoi",
-            url: "https://www.facebook.com/kun.22tuoi/",
-        },
-        {
-            icon: "⌘",
-            name: "GitHub",
-            desc: "Nơi lưu trữ các dự án lập trình",
-            value: "github.com/NguyenTuanTai22",
-            url: "https://github.com/NguyenTuanTai22",
-        },
-        {
-            icon: "♪",
-            name: "TikTok",
-            desc: "Nội dung giải trí và cá nhân",
-            value: "tiktok.com/@dung.tim.den.toi",
-            url: "https://www.tiktok.com/@dung.tim.den.toi",
-        },
-        {
-            icon: "Z",
-            name: "Zalo",
-            desc: "Liên hệ qua Zalo",
-            value: "zalo.me/0868807904",
-            url: "https://zalo.me/0868807904",
-        },
-    ];
+    const { data, loading } = usePortfolioData();
+    const socials = data.socials || [];
+
+    if (loading) {
+        return (
+            <main className="social-page">
+                <section className="social-wrapper">
+                    <p>Đang tải dữ liệu mạng xã hội...</p>
+                </section>
+            </main>
+        );
+    }
 
     return (
         <main className="social-page">
@@ -49,8 +32,8 @@ function Social() {
 
                         <p>
                             Đây là những nền tảng mạng xã hội cá nhân của mình.
-                            Bạn có thể thay các đường dẫn bên dưới bằng link thật
-                            để người xem dễ dàng liên hệ, theo dõi hoặc xem các dự án của mình.
+                            Người xem có thể liên hệ, theo dõi hoặc xem các dự án
+                            thông qua các đường dẫn bên dưới.
                         </p>
 
                         <div className="social-note">
@@ -75,25 +58,29 @@ function Social() {
                         </div>
 
                         <div className="social-list">
-                            {socials.map((item) => (
-                                <a
-                                    className="social-card"
-                                    href={item.url}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    key={item.name}
-                                >
-                                    <div className="social-icon">{item.icon}</div>
+                            {socials.length > 0 ? (
+                                socials.map((item, index) => (
+                                    <a
+                                        className="social-card"
+                                        href={item.url}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        key={`${item.name}-${index}`}
+                                    >
+                                        <div className="social-icon">{item.icon}</div>
 
-                                    <div className="social-content">
-                                        <h3>{item.name}</h3>
-                                        <p>{item.desc}</p>
-                                        <strong>{item.value}</strong>
-                                    </div>
+                                        <div className="social-content">
+                                            <h3>{item.name}</h3>
+                                            <p>{item.desc}</p>
+                                            <strong>{item.value}</strong>
+                                        </div>
 
-                                    <div className="social-arrow">↗</div>
-                                </a>
-                            ))}
+                                        <div className="social-arrow">↗</div>
+                                    </a>
+                                ))
+                            ) : (
+                                <p>Chưa có mạng xã hội nào trong JSON.</p>
+                            )}
                         </div>
                     </section>
                 </div>
